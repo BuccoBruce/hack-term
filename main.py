@@ -7,11 +7,11 @@ def target_select():
     print("2. CENTRAL INTELLIGENCE AGENCY")
     print("3. DEPARTMENT OF DEFENSE")
     print("4. INTERNAL REVENUE SERVICE")
-    choice = int(input())
-    choices = [1, 2, 3, 4]
+    choice = input()
+    choices = ["1", "2", "3", "4"]
     while choice not in choices:
         print("Incorrect choice, please try again...")
-        choice = int(input())
+        choice = input()
 
 
 def main():
