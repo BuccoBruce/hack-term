@@ -10,12 +10,13 @@ console = Console()
 def norad() -> None:
     print("NORAD COMMAND CENTER")
     print("FOR AUTHORIZED USERS ONLY")
+    print("1. MISSILE LAUNCH SYSTEM")
 
-    choices = ["launch missile", "exit"]
+    choices = ["1", "2", "exit", "quit"]
     choice = get_input(choices)
 
     while choice != "exit":
-        if choice == "launch missile":
+        if choice == "1":
             random_cancellation_code = generate_random_code(5)
             console.print("MISSILE LAUNCH INITIALIZED!!!", style="bold red")
             console.print(
@@ -35,6 +36,10 @@ def norad() -> None:
                     console.print("CANCELLATION TIMEOUT")
                 console.print("MISSILE LAUNCHED", style="bold red")
             choice = get_input(choices)
+        if choice == "2":
+            # Radar view of incoming threats displaying ASCII map of USA?
+            # Satellite ASCII map of Earth?
+            pass
 
     if choice == "exit" or choice == "quit":
         return

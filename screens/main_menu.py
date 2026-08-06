@@ -11,7 +11,10 @@ def main_menu() -> None:
         print("1. NORAD MISSILE COMMAND")
         print("2. CENTRAL INTELLIGENCE AGENCY")
         print("3. DEPARTMENT OF DEFENSE")
+        # Candidate for removal
         print("4. INTERNAL REVENUE SERVICE")
+        # Test integration
+        # with DB (csv, rich tables)
 
         choices = ["1", "2", "3", "4", "exit", "quit"]
         choice = get_input(choices)
