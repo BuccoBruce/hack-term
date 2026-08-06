@@ -1,9 +1,6 @@
 import os
-import sys
 import secrets
 import string
-
-from time import sleep
 
 from inputimeout import inputimeout
 from rich.console import Console
@@ -15,19 +12,20 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-def get_input(choices: list) -> None:
+def get_input(choices: list) -> str:
     choice = input("> ")
     while choice not in choices:
         print("Incorrect choice, please try again...")
         choice = input("> ")
     return choice
 
+
 def generate_random_code(length: int) -> str:
-    generated_code = ''.join(
-        secrets.choice(string.ascii_letters + string.digits)
-        for _ in range(length)
-        )
+    generated_code = "".join(
+        secrets.choice(string.ascii_letters + string.digits) for _ in range(length)
+    )
     return generated_code.upper()
+
 
 def main_screen() -> None:
     clear_screen()
@@ -43,9 +41,9 @@ def main_screen() -> None:
     if choice == "1":
         clear_screen()
         norad_screen()
-    if choice == "exit" or "quit":
+    if choice == "exit" or choice == "quit":
         clear_screen()
-        sys.exit
+        return
 
 
 def norad_screen() -> None:
@@ -78,6 +76,11 @@ def norad_screen() -> None:
             choice = get_input(choices)
 
     main_screen()
+
+
+def cia_screen() -> None:
+    print("Welcome to the Central Intelligence Agency")
+    print("Centralized Command and Control Center")
 
 
 def main() -> None:
