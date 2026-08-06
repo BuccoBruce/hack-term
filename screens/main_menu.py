@@ -1,3 +1,4 @@
+from screens.cia import cia
 from screens.norad import norad
 from utils.input import get_input
 from utils.terminal import clear_screen
@@ -18,6 +19,10 @@ def main_menu() -> None:
         if choice == "1":
             clear_screen()
             norad()
+
+        elif choice == "2":
+            clear_screen()
+            cia()
 
         if choice == "exit" or choice == "quit":
             clear_screen()

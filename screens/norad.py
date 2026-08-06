@@ -36,4 +36,5 @@ def norad() -> None:
                 console.print("MISSILE LAUNCHED", style="bold red")
             choice = get_input(choices)
 
-    return
+    if choice == "exit" or choice == "quit":
+        return
