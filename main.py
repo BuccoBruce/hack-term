@@ -1,5 +1,8 @@
 import os
 import sys
+import secrets
+import string
+
 from time import sleep
 
 from inputimeout import inputimeout
@@ -12,15 +15,21 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-def get_input(choices):
+def get_input(choices: list) -> None:
     choice = input("> ")
     while choice not in choices:
         print("Incorrect choice, please try again...")
         choice = input("> ")
     return choice
 
+def generate_random_code(length: int) -> str:
+    generated_code = ''.join(
+        secrets.choice(string.ascii_letters + string.digits)
+        for _ in range(length)
+        )
+    return generated_code.upper()
 
-def main_screen():
+def main_screen() -> None:
     clear_screen()
     print("SELECT YOUR TARGET: ")
     print("1. NORAD MISSILE COMMAND")
@@ -39,7 +48,7 @@ def main_screen():
         sys.exit
 
 
-def norad_screen():
+def norad_screen() -> None:
     print("NORAD COMMAND CENTER")
     print("FOR AUTHORIZED USERS ONLY")
 
@@ -48,16 +57,17 @@ def norad_screen():
 
     while choice != "exit":
         if choice == "launch missile":
+            random_cancellation_code = generate_random_code(5)
             console.print("MISSILE LAUNCH INITIALIZED!!!", style="bold red")
             console.print(
-                "Enter cancellation code [bold red]EZ5RA[/bold red] to continue"
+                f"Enter cancellation code [bold red]{random_cancellation_code}[/bold red] to continue"
             )
             console.print("Missile will launch in 5 seconds")
             try:
-                cancellation_code = inputimeout(prompt="> ", timeout=5)
+                cancellation_code = inputimeout(prompt="> ", timeout=5).upper()
             except:
                 cancellation_code = None
-            if cancellation_code == "EZ5RA":
+            if cancellation_code == random_cancellation_code:
                 print("Missile Launch Aborted")
             else:
                 if cancellation_code != None:
@@ -70,7 +80,7 @@ def norad_screen():
     main_screen()
 
 
-def main():
+def main() -> None:
     main_screen()
 
 
