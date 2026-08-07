@@ -1,9 +1,12 @@
+from time import sleep
+
 from inputimeout import inputimeout
 from rich.console import Console
-from time import sleep
+
+from screens.world_map import world_map
 from utils.generator import generate_random_code
 from utils.input import get_input
-from screens.world_map import world_map
+
 console = Console()
 
 
@@ -11,18 +14,22 @@ def norad() -> None:
     print("NORAD COMMAND CENTER")
     print("FOR AUTHORIZED USERS ONLY")
     print("1. MISSILE LAUNCH SYSTEM")
+    print("2. DEFCON MAP")
 
     choices = ["1", "2", "exit", "quit"]
     choice = get_input(choices)
 
     while choice != "exit":
         if choice == "1":
+            print("Select target city")
+            target = input("> ")
             random_cancellation_code = generate_random_code(5)
             console.print("MISSILE LAUNCH INITIALIZED!!!", style="bold red")
             console.print(
-                f"Enter cancellation code [bold red]{random_cancellation_code}[/bold red] to continue"
+                f"Enter cancellation code [bold red]{random_cancellation_code}[/bold red] to abort"
             )
             console.print("Missile will launch in 5 seconds")
+            console.print(f"Target: {target}")
             try:
                 cancellation_code = inputimeout(prompt="> ", timeout=5).upper()
             except:
@@ -37,9 +44,7 @@ def norad() -> None:
                 console.print("MISSILE LAUNCHED", style="bold red")
             choice = get_input(choices)
         if choice == "2":
-            # Radar view of incoming threats displaying ASCII map of USA?
             world_map()
-            sleep(5)
             choice = get_input(choices)
 
     if choice == "exit" or choice == "quit":

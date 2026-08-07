@@ -1,0 +1,36 @@
+{
+    "agents": [
+        {
+            "id": "CIA-001",
+            "subject": {
+                "name": "Jason Bourne",
+                "alias": "Jesus Christ",
+                "agency": "CIA",
+                "age": "35"
+            },
+            "location": {
+                "city": "Paris",
+                "country": "France"
+            },
+            "clearance level": 5,
+            "cover": "Journalist",
+            "recruitment date": "1985-02-04"
+        },
+        {
+            "id": "MI6-007",
+            "subject": {
+                "name": "James Bond",
+                "agency": "MI6",
+                "alias": "Bond",
+                "age": "42"
+            },
+            "location": {
+                "city": "London",
+                "country": "United Kingdom"
+            },
+            "clearance level": "5",
+            "cover": "Janitor",
+            "recruitment date": "1975-07-04"
+        }
+    ]
+}

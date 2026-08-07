@@ -1,0 +1,31 @@
+Active
+Active - Field Deployment
+Active - Deep Cover
+Active - Embedded
+Available for Tasking
+Awaiting Assignment
+On Standby
+Operational
+Recently Activated
+Mission Ready
+Awaiting Extraction
+Awaiting Contact
+Undercover
+Long-Term Infiltration
+Compromised - Under Observation
+Compromised - Requires Extraction
+Compromised - Identity Exposed
+Surveillance Required
+Limited Contact Only
+Communications Restricted
+Communications Lost
+Unresponsive
+Inactive
+Retired - Maintains Access
+Retired - Potential Reactivation
+Medical Leave
+Psychological Evaluation Pending
+Security Review Pending
+Internal Investigation
+Suspended Pending Review
+Loyalty Assessment Required

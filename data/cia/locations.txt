@@ -1,0 +1,59 @@
+Budapest, Hungary
+Prague, Czech Republic
+Vienna, Austria
+Geneva, Switzerland
+Zurich, Switzerland
+Warsaw, Poland
+Bucharest, Romania
+Athens, Greece
+Istanbul, Turkey
+Berlin, Germany
+Paris, France
+London, United Kingdom
+Madrid, Spain
+Rome, Italy
+Stockholm, Sweden
+Oslo, Norway
+Helsinki, Finland
+Reykjavik, Iceland
+Kyiv, Ukraine
+Tbilisi, Georgia
+Yerevan, Armenia
+Tashkent, Uzbekistan
+Cairo, Egypt
+Casablanca, Morocco
+Nairobi, Kenya
+Lagos, Nigeria
+Cape Town, South Africa
+Tel Aviv, Israel
+Amman, Jordan
+Beirut, Lebanon
+Dubai, United Arab Emirates
+Doha, Qatar
+Riyadh, Saudi Arabia
+New Delhi, India
+Mumbai, India
+Bangkok, Thailand
+Singapore
+Hong Kong
+Tokyo, Japan
+Seoul, South Korea
+Manila, Philippines
+Sydney, Australia
+Buenos Aires, Argentina
+Santiago, Chile
+São Paulo, Brazil
+Mexico City, Mexico
+Havana, Cuba
+Caracas, Venezuela
+Panama City, Panama
+Guatemala City, Guatemala
+Toronto, Canada
+Montreal, Canada
+Anchorage, Alaska
+Washington, D.C.
+New York City, United States
+Los Angeles, United States
+San Francisco, United States
+Miami, United States
+Seattle, United States
