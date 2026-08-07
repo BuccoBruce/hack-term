@@ -1,9 +1,9 @@
 from inputimeout import inputimeout
 from rich.console import Console
-
+from time import sleep
 from utils.generator import generate_random_code
 from utils.input import get_input
-
+from screens.world_map import world_map
 console = Console()
 
 
@@ -38,8 +38,9 @@ def norad() -> None:
             choice = get_input(choices)
         if choice == "2":
             # Radar view of incoming threats displaying ASCII map of USA?
-            # Satellite ASCII map of Earth?
-            pass
+            world_map()
+            sleep(5)
+            choice = get_input(choices)
 
     if choice == "exit" or choice == "quit":
         return
