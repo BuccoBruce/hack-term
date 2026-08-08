@@ -6,18 +6,74 @@ from rich.table import Table
 
 from utils.input import get_input
 
-console = Console()
-table = Table(title="IRS TAXPAYER DATABASE")
-with open("data/irs/database.csv", newline="") as f:
-    r = csv.DictReader(f)
 
-    for column in r.fieldnames:
-        table.add_column(column.upper())
+def print_table():
+    console = Console()
+    table = Table(title="IRS TAXPAYER DATABASE")
 
-    for row in r:
-        print(row)
-        print(row.values())
-        table.add_row(*row.values())
+    with open("data/irs/database.csv", newline="") as f:
+        r = csv.reader(f)
+
+        headers = next(r)
+        for header in headers:
+            table.add_column(header.upper())
+
+        for row in r:
+            table.add_row(*row)
+    console.print(table)
+
+
+def input_checker(valid_items):
+
+    while item not in valid_items:
+        item = input("> ")
+        if item not in valid_items:
+            print(f"INVALID ENTRY, MUST BE ONE OF {valid_items}")
+
+    return item
+
+
+def add_taxpayer() -> list:
+    new_id = new_name = new_status = new_filing = new_year = new_balance = new_audit = (
+        ""
+    )
+
+    print("ID NUMBER (IRS-XXXXX)")
+    new_id = input("> ")
+
+    print("NAME")
+    new_name = input("> ")
+
+    valid_statuses = ["ACTIVE", "DELINQUINT", "UNDER_REVIEW"]
+    print("STATUS")
+    new_status = get_input(valid_statuses)
+
+    valid_filings = ["SINGLE", "JOINT"]
+    print("FILING")
+    new_filing = get_input(valid_filings)
+
+    print("YEAR")
+    new_year = input("> ")
+
+    print("BALANCE")
+    new_balance = input("> ")
+
+    print("AUDIT")
+    new_audit = input("> ")
+
+    new_taxpayer = [
+        new_id,
+        new_name,
+        new_status,
+        new_filing,
+        new_year,
+        new_balance,
+        new_audit,
+    ]
+
+    with open("data/irs/database.csv", "a", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(new_taxpayer)
 
 
 def irs() -> None:
@@ -36,8 +92,8 @@ def irs() -> None:
             # Query Taxpayer
             ...
         elif choice == "2":
-            # Add Taxpayer
-            ...
+            add_taxpayer()
+            choice = get_input(choices)
         elif choice == "3":
             # Modify Taxpayer
             ...
@@ -49,7 +105,7 @@ def irs() -> None:
             ...
         elif choice == "6":
             # Print Database
-            console.print(table)
+            print_table()
             choice = get_input(choices)
 
         if choice not in choices:
